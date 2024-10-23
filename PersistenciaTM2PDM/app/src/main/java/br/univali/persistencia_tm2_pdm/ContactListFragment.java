@@ -31,7 +31,7 @@ public class ContactListFragment extends Fragment {
         // Configuração do RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         // Exemplo de Adapter
-        recyclerView.setAdapter(new ContactAdapter(new ArrayList<Contact>()));
+//        recyclerView.setAdapter(new ContactAdapter(new ArrayList<Contact>()));
 
         // Adiciona contato ao clicar no FAB
         fabAddContact.setOnClickListener(v -> {

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class ContactAdapter extends RecyclerView.Adapter {
     public ContactAdapter(ArrayList<Contact> contacts) {
+
     }
 
     @NonNull
