@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">Persistencia-TM2-PDM</string>
+    <string name="app_name">ContactList</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Usuário</string>
+    <string name="nav_header_subtitle">Seja bem vindo!</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="menu_homepage">Home</string>
+    <string name="menu_family">Familia</string>
+    <string name="menu_friends">Amigos</string>
+    <string name="menu_business">Trabalho</string>
+    <string name="menu_gamer">Jogos</string>
+    <string name="menu_school">Faculdade</string>
+    <string name="add_person">Adicionar Contato</string>
+
+    <string-array name="group_names">
+        <item>Familia</item>
+        <item>Amigos</item>
+        <item>Trabalho</item>
+        <item>Jogos</item>
+        <item>Faculdade</item>
+    </string-array>
+
+    <string-array name="categoria_grupo">
+        <item>Casa</item>
+        <item>Celular</item>
+        <item>Trabalho</item>
+    </string-array>
+
 </resources>
