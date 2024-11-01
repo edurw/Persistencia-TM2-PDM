@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
@@ -22,9 +24,12 @@ import com.works.odev8.ui.PersonDetail.PersonDetailFragmentArgs
 class PersonUpdateFragment : Fragment() {
 
     private val argument: PersonUpdateFragmentArgs by navArgs()
+    private lateinit var telefoneList: LinearLayout
+    private lateinit var buttonAddTelefone: Button
 
     private var _binding: FragmentPersonUpdateBinding? = null
     private val binding get() = _binding!!
+
 
     var thread: Thread? = null
     override fun onCreateView(
@@ -35,6 +40,12 @@ class PersonUpdateFragment : Fragment() {
         _binding = FragmentPersonUpdateBinding.inflate(inflater, container, false)
         val root = binding.root
 
+        telefoneList = binding.telefoneList
+        buttonAddTelefone = binding.btnAddTelefone
+
+        buttonAddTelefone.setOnClickListener {
+            addTelefoneField()
+        }
 
         return root
     }
@@ -93,6 +104,23 @@ class PersonUpdateFragment : Fragment() {
                 .setNegativeButton("Não", null)
                 .show()
         }
+    }
+
+    private fun addTelefoneField() {
+        // Infla o layout row_telephone.xml e adiciona ao telefoneList
+        val telefoneFieldView = LayoutInflater.from(requireContext()).inflate(R.layout.row_telephone, telefoneList, false)
+        val removeButton = telefoneFieldView.findViewById<Button>(R.id.btnDelTelephone)
+
+        removeButton.setOnClickListener {
+            telefoneList.removeView(telefoneFieldView)
+        }
+
+        telefoneList.addView(telefoneFieldView)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onDestroy() {

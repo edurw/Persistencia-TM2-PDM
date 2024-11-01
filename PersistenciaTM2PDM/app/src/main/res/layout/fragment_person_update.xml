@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp">
 
     <EditText
@@ -17,6 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/groupUpdateSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:entries="@array/group_names"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameUpdateEditText" />
+
     <EditText
         android:id="@+id/phoneUpdateEditText"
         android:layout_width="0dp"
@@ -24,11 +35,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:hint="Phone"
+        android:hint="Telefone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameUpdateEditText" />
+        app:layout_constraintTop_toBottomOf="@id/groupUpdateSpinner" />
 
     <Spinner
         android:id="@+id/categoriaUpdateSpinner"
@@ -40,15 +51,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phoneUpdateEditText" />
 
-    <Spinner
-        android:id="@+id/groupUpdateSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnAddTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="32dp"
-        android:entries="@array/group_names"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="ADD TELEFONE"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaUpdateSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/categoriaUpdateSpinner" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddTelefone"
+        tools:layout_editor_absoluteX="16dp">
+
+        <LinearLayout
+            android:id="@+id/telefoneList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddTelefone" />
+
+    </ScrollView>
 
     <Button
         android:id="@+id/updateButton"
@@ -59,8 +89,8 @@
         android:layout_marginEnd="64dp"
         android:backgroundTint="#75AC4F"
         android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/groupUpdateSpinner" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
