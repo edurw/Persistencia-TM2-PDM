@@ -38,7 +38,6 @@ class AddPersonFragment : Fragment() {
         telefoneList = binding.telefoneList
         buttonAddTelefone = binding.btnAddTelefone
 
-        // Configuração do botão para adicionar novos campos de telefone
         buttonAddTelefone.setOnClickListener {
             addTelefoneField()
         }
@@ -79,8 +78,13 @@ class AddPersonFragment : Fragment() {
     }
 
     private fun addTelefoneField() {
-        // Infla o layout row_telephone.xml e adiciona ao telefoneList
         val telefoneFieldView = LayoutInflater.from(requireContext()).inflate(R.layout.row_telephone, telefoneList, false)
+        val removeButton = telefoneFieldView.findViewById<Button>(R.id.btnDelTelephone)
+
+        removeButton.setOnClickListener {
+            telefoneList.removeView(telefoneFieldView)
+        }
+
         telefoneList.addView(telefoneFieldView)
     }
 
